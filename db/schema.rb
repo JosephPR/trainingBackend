@@ -19,40 +19,24 @@ ActiveRecord::Schema.define(version: 2019_07_10_224705) do
     t.string "name"
     t.string "image_url"
     t.string "content"
-    t.bigint "pet_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["pet_id"], name: "index_cats_on_pet_id"
   end
 
   create_table "dogs", force: :cascade do |t|
     t.string "name"
     t.string "image_url"
     t.string "content"
-    t.bigint "pet_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["pet_id"], name: "index_dogs_on_pet_id"
   end
 
   create_table "exotics", force: :cascade do |t|
     t.string "name"
     t.string "image_url"
     t.string "content"
-    t.bigint "pet_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["pet_id"], name: "index_exotics_on_pet_id"
-  end
-
-  create_table "pets", force: :cascade do |t|
-    t.string "name"
-    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "cats", "pets"
-  add_foreign_key "dogs", "pets"
-  add_foreign_key "exotics", "pets"
 end

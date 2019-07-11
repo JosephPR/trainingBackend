@@ -22,7 +22,7 @@ class Api::V1::DogsController < ApplicationController
   private
 
   def dog_params
-    params.permit(:name, :image_url, :content, :pet_id)
+    params.permit(:name, :image_url, :content)
   end
 
   def find_dog
